@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connor Batsell — Projects</title>
+  <meta name="description" content="Selected projects by Connor Batsell." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="wide">
+  <header class="topnav">
+    <div class="topnav-inner">
+      <nav class="pages">
+        <a href="index.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <main>
+    <section>
+      <h2>Projects</h2>
+
+      <div class="year-group">
+        <h3 class="year-label">2026</h3>
+        <div class="year-bubble">
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>LLM Overlay</h3>
+                <div class="tags">
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Chrome Extension</span>
+                </div>
+              </div>
+              <p class="meta">
+                <a href="https://github.com/ConnorBatsell/LLMOverlay" target="_blank" rel="noopener">GitHub</a>
+              </p>
+            </header>
+            <p>A Chrome extension that lets you highlight text inside <strong>ChatGPT</strong> or <strong>Claude</strong> replies and get instant explanations in a side panel via a keyboard shortcut, without disrupting the main conversation. It routes between the <strong>Anthropic</strong> and <strong>OpenAI</strong> APIs with streamed responses, grounding each explanation in the full chat transcript for context-aware follow-ups. The extension is built with <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Vite</strong> on the Chrome Extensions APIs; API keys live in <code>chrome.storage.local</code> and every call is routed through a background service worker, so content scripts never see secrets.</p>
+            <div class="shots">
+              <figure class="shot">
+                <a href="images/llmoverlay-full.png" target="_blank" rel="noopener">
+                  <img src="images/llmoverlay-full.png" alt="LLM Overlay side panel docked next to a Claude conversation" loading="lazy" />
+                </a>
+                <figcaption>Docked beside the chat</figcaption>
+              </figure>
+              <figure class="shot">
+                <a href="images/llmoverlay-panel.png" target="_blank" rel="noopener">
+                  <img src="images/llmoverlay-panel.png" alt="LLM Overlay panel showing a streamed explanation of highlighted text" loading="lazy" />
+                </a>
+                <figcaption>Explaining highlighted text</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>Dynamic Memory Allocator</h3>
+                <div class="tags">
+                  <span class="tag">Rust</span>
+                </div>
+              </div>
+              <p class="meta">
+                <a href="https://github.com/ConnorBatsell/dynamicMemoryAllocator" target="_blank" rel="noopener">GitHub</a>
+              </p>
+            </header>
+            <p>A from-scratch heap allocator in <strong>Rust</strong> that plugs into the language as a <code>#[global_allocator]</code> by implementing the <code>GlobalAlloc</code> trait, so ordinary <code>Vec</code>, <code>Box</code>, and <code>String</code> allocations route through it. It manages a fixed static heap with a free list, satisfying requests via first-fit with block splitting and honoring arbitrary power-of-two alignment, then immediately coalesces neighboring free blocks on deallocation to fight fragmentation and reclaim all memory once live objects drop. A <code>Mutex</code>-wrapped heap makes it usable as a thread-safe global allocator, and the project ships a verbose demo that renders the raw heap as a memory map alongside an 18-test suite covering coalescing, alignment edge cases, exact fits, and out-of-memory behavior.</p>
+            <div class="shots">
+              <figure class="shot">
+                <a href="images/allocator-demo.png" target="_blank" rel="noopener">
+                  <img src="images/allocator-demo.png" alt="Demo output rendering the raw heap as a memory map showing allocation, freeing, and coalescing" loading="lazy" />
+                </a>
+                <figcaption>Heap memory map from the demo</figcaption>
+              </figure>
+              <figure class="shot">
+                <a href="images/allocator-tests.png" target="_blank" rel="noopener">
+                  <img src="images/allocator-tests.png" alt="cargo test output showing all 18 allocator tests passing" loading="lazy" />
+                </a>
+                <figcaption>The 18-test suite passing</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>FEAT: Automated Test-Case Generation</h3>
+                <div class="tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Python</span>
+                </div>
+              </div>
+            </header>
+            <p>An automated test-case generation tool built on a typed <strong>Python</strong> object model for primitive and iterable types using generics, inheritance, and abstraction. It runs an end-to-end pipeline that executes reference and buggy implementations through process-level invocation and aggregates failures across versions, then selects a minimal test set with a <strong>greedy set-cover</strong> algorithm. Recursive AST-based generators and JSON-driven configuration drive the whole process.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-group">
+        <h3 class="year-label">2024</h3>
+        <div class="year-bubble">
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>Pacman Hill Climbing</h3>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">AI Search</span>
+                </div>
+              </div>
+              <p class="meta">
+                <a href="https://github.com/ConnorBatsell/PacMan-Hill-Climbing-OLD" target="_blank" rel="noopener">GitHub</a>
+              </p>
+            </header>
+            <p>A Pacman agent that uses <strong>hill-climbing search</strong> over a hand-designed evaluation function to choose moves in real time, balancing pellet pursuit, ghost avoidance, and corridor escape. I built the game engine from scratch in <strong>Python</strong>, including a tile-based map representation, entity update loop, and a node graph for pathfinding and successor generation, then tuned the heuristic weights iteratively against scripted ghost behaviors to compare greedy local search against random and shortest-path baselines.</p>
+          </article>
+
+          <article class="entry">
+            <header class="entry-head">
+              <div>
+                <h3>Valorant Player Detection Model</h3>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">YOLOv5</span>
+                  <span class="tag">Computer Vision</span>
+                </div>
+              </div>
+              <p class="meta">
+                <a href="https://drive.google.com/file/d/1C8EtwlFQXWTdPFzPmPti6ycVpdYprf8h/view?usp=sharing" target="_blank" rel="noopener">Demo video</a>
+              </p>
+            </header>
+            <p>A <strong>YOLOv5</strong> object-detection model trained on labeled Valorant gameplay footage to detect enemy players in real time across multiple maps and agent skins. I built the data pipeline end-to-end, handling frame extraction, bounding-box annotation, augmentation, and training/validation splits, then ran inference on live screen captures to overlay detection boxes on the game feed for performance evaluation.</p>
+            <div class="shots">
+              <figure class="shot">
+                <a href="images/valorant-detection.png" target="_blank" rel="noopener">
+                  <img src="images/valorant-detection.png" alt="Live inference window drawing bounding boxes around enemy players in the Valorant shooting range" loading="lazy" />
+                </a>
+                <figcaption>Live inference drawing detection boxes</figcaption>
+              </figure>
+            </div>
+        </div>
+      </div>
+    </section>
+    </main>
+  </div>
+</body>
+</html>
