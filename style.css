@@ -136,7 +136,7 @@ section { padding: 50px; }
 .content #experience h2,
 .content #skills h2 { margin-top: -80px; }
 
-.content p { line-height: 1.6; }
+.content p { line-height: normal; }
 
 /* Inline job / education headers, matching the reference site. */
 .inline { display: inline; }
