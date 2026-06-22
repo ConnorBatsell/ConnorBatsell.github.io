@@ -160,50 +160,9 @@ section { padding: 50px; }
 .skill { margin: 0 0 8px; }
 
 /* --- Featured projects (main page) --- */
-.featured-card {
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 18px 22px;
-  background: var(--header-bg-color);
-  transition: border-color 0.18s ease, transform 0.18s ease;
-}
-
-.featured-card:hover {
-  border-color: var(--primary-color);
-  transform: translateY(-1px);
-}
-
-.featured-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.featured-users {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  background: var(--primary-soft);
-  padding: 3px 10px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-.featured-meta { color: var(--muted); }
-.featured-meta a {
-  color: var(--primary-color);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-.featured-meta a:hover { border-bottom-color: var(--primary-color); }
-
 .featured-all {
-  display: inline-block;
-  margin-top: 18px;
   color: var(--primary-color);
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.18s ease;
