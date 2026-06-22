@@ -154,6 +154,17 @@ section { padding: 50px; }
 .bold { font-weight: bold; }
 .desc { margin-top: 5px; }
 
+.exp-logo {
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid var(--rule);
+  vertical-align: middle;
+  margin-right: 9px;
+  background: #fff;
+}
+
 .edu-degree { margin-top: -17px; }
 .edu-degree + .edu-degree { margin-top: -12px; }
 
