@@ -29,6 +29,7 @@
             <span>.</span>
           </h2>
           <p>Aspiring software <span class="primary">engineer</span><br>and full-stack <span class="primary">developer</span>,<br>current <span class="primary">CS &amp; AI student</span> at Rice University.</p>
+          <p>I am especially interested in<br><span id="typingAnimation" class="primary"></span><span class="typing-cursor">|</span></p>
           <h4>Let's connect!</h4>
           <div class="socials">
             <a href="https://www.linkedin.com/in/connor-batsell-a82759309/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
@@ -86,5 +87,48 @@
       </section>
     </main>
   </div>
+
+  <script>
+    var words = ["full stack development.", "backend systems.", "infrastructure.", "machine learning."];
+    var wordIndex = 0;
+    var typingSpeed = 115; // in milliseconds
+    var deleteSpeed = 75; // in milliseconds
+    var typingAnimation = document.getElementById("typingAnimation");
+    var isTyping = true;
+
+    function typeWriter() {
+      if (isTyping) {
+        var word = words[wordIndex];
+        var i = 0;
+        var typingInterval = setInterval(function() {
+          typingAnimation.innerHTML += word.charAt(i);
+          i++;
+          if (i > word.length) {
+            clearInterval(typingInterval);
+            isTyping = false;
+            setTimeout(deleteWord, 1000); // hold for 1 second
+          }
+        }, typingSpeed);
+      }
+    }
+
+    function deleteWord() {
+      var word = words[wordIndex];
+      var i = word.length - 1;
+      var deleteInterval = setInterval(function() {
+        var currentText = typingAnimation.innerHTML;
+        typingAnimation.innerHTML = currentText.slice(0, -1);
+        i--;
+        if (i < 0) {
+          clearInterval(deleteInterval);
+          wordIndex = (wordIndex + 1) % words.length;
+          isTyping = true;
+          setTimeout(typeWriter, 200); // delay before typing next word
+        }
+      }, deleteSpeed);
+    }
+
+    typeWriter(); // start typing animation initially
+  </script>
 </body>
 </html>

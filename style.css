@@ -109,6 +109,15 @@ section { padding: 50px; }
 
 .primary { color: var(--primary-color); }
 
+.typing-cursor {
+  color: var(--primary-color);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 .socials {
   margin-top: -8px;
   display: flex;
