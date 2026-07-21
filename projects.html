@@ -38,20 +38,6 @@
       </article>
 
       <article class="proj">
-        <h4 class="inline"><span class="primary-bold">ReSorcer</span></h4>
-        <span class="inline"> &bull; <i>Go, PostgreSQL/PostGIS, Supabase, Docker</i> &bull; <span class="bold">1st place, RiceHacks</span> &bull; <a href="https://github.com/ConnorBatsell/ReSorcer" target="_blank" rel="noopener">GitHub</a></span>
-        <p class="desc">A community-driven map for finding nearby essential resources, food, shelter, medical care, showers, water, clothing, and charging or Wi-Fi access, where anyone can post a spot and other users endorse it to vouch for its accuracy or flag it when it goes stale. The backend is a Go service built on the Chi router and pgx, backed by PostgreSQL with PostGIS so nearby-spot lookups run as real geographic queries, and it verifies Supabase-issued JWTs to keep discovery open to the public while gating posting, endorsing, and flagging behind authenticated accounts. The API is containerized with Docker and deployed on Fly.io, and a Leaflet front end plots each spot on the map beside a sidebar that ranks nearby help by endorsement count.</p>
-        <div class="shots">
-          <figure class="shot">
-            <a href="images/resorcer-map.png" target="_blank" rel="noopener">
-              <img src="images/resorcer-map.png" alt="ReSorcer map of San Francisco with pinned resources beside a sidebar of nearby help sorted by endorsements" loading="lazy" />
-            </a>
-            <figcaption>Nearby help, ranked by endorsements</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <article class="proj">
         <h4 class="inline"><span class="primary-bold">LLM Overlay</span></h4>
         <span class="inline"> &bull; <i>TypeScript, React, Chrome Extension</i> &bull; <a href="https://github.com/ConnorBatsell/LLMOverlay" target="_blank" rel="noopener">GitHub</a></span>
         <p class="desc">A Chrome extension that lets you highlight text inside ChatGPT or Claude replies and get instant explanations in a side panel via a keyboard shortcut, without disrupting the main conversation. It routes between the Anthropic and OpenAI APIs with streamed responses, grounding each explanation in the full chat transcript for context-aware follow-ups. The extension is built with TypeScript, React, and Vite on the Chrome Extensions APIs; API keys live in <code>chrome.storage.local</code> and every call is routed through a background service worker, so content scripts never see secrets.</p>
@@ -98,6 +84,20 @@
       </article>
 
       <h3 class="proj-year">2025</h3>
+
+      <article class="proj">
+        <h4 class="inline"><span class="primary-bold">ReSorcer</span></h4>
+        <span class="inline"> &bull; <i>Go, PostgreSQL/PostGIS, Supabase, Docker</i> &bull; <span class="bold">1st place, RiceHacks</span> &bull; <a href="https://github.com/ConnorBatsell/ReSorcer" target="_blank" rel="noopener">GitHub</a></span>
+        <p class="desc">A community-driven map for finding nearby essential resources, food, shelter, medical care, showers, water, clothing, and charging or Wi-Fi access, where anyone can post a spot and other users endorse it to vouch for its accuracy or flag it when it goes stale. The backend is a Go service built on the Chi router and pgx, backed by PostgreSQL with PostGIS so nearby-spot lookups run as real geographic queries, and it verifies Supabase-issued JWTs to keep discovery open to the public while gating posting, endorsing, and flagging behind authenticated accounts. The API is containerized with Docker and deployed on Fly.io, and a Leaflet front end plots each spot on the map beside a sidebar that ranks nearby help by endorsement count.</p>
+        <div class="shots">
+          <figure class="shot">
+            <a href="images/resorcer-map.png" target="_blank" rel="noopener">
+              <img src="images/resorcer-map.png" alt="ReSorcer map of San Francisco with pinned resources beside a sidebar of nearby help sorted by endorsements" loading="lazy" />
+            </a>
+            <figcaption>Nearby help, ranked by endorsements</figcaption>
+          </figure>
+        </div>
+      </article>
 
       <article class="proj">
         <h4 class="inline"><span class="primary-bold">Build a Brain</span></h4>
